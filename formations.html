@@ -12,7 +12,7 @@
 
   <link rel="canonical" href="https://permanentbeautybysam.ma/formations.html">
 
-  <link rel="stylesheet" href="/styles.css?v=600">
+  <link rel="stylesheet" href="styles.css?v=600">
 </head>
 
 <body>
@@ -26,7 +26,7 @@
 ```
 <div class="formations-photo">
   <img
-    src="/assets/images/training.jpg"
+    src="assets/images/training.jpg"
     alt="Formation Maquillage Permanent Permanent Beauty by Sam">
 </div>
 
@@ -65,13 +65,13 @@
   </div>
 
 </div>
-
+```
 
   </section>
 
   <section class="why">
 
-
+```
 <div class="container">
 
   <h2>Programme de la Formation</h2>
@@ -129,13 +129,13 @@
   </div>
 
 </div>
-
+```
 
   </section>
 
   <section class="cta-section">
 
-
+```
 <div class="container">
 
   <h2>À qui s'adresse cette formation ?</h2>
@@ -153,7 +153,7 @@
   </a>
 
 </div>
-
+```
 
   </section>
 
@@ -167,7 +167,7 @@ target="_blank"
 rel="noopener"
 aria-label="WhatsApp">
 
-  <img src="/assets/images/ui/whatsapp.png" alt="WhatsApp">
+  <img src="assets/images/ui/whatsapp.png" alt="WhatsApp">
   <span>WhatsApp</span>
 
 </a>
@@ -186,15 +186,15 @@ async function includeHTML(targetId, url){
 }
 
 (async function(){
-  await includeHTML("site-header","/partials/header.html");
+  await includeHTML("site-header","partials/header.html");
 })();
 
 (async function(){
-  await includeHTML("site-footer","/partials/footer.html");
+  await includeHTML("site-footer","partials/footer.html");
 
-  const yearEl=document.getElementById("year");
+  const yearEl = document.getElementById("year");
   if(yearEl){
-    yearEl.textContent=new Date().getFullYear();
+    yearEl.textContent = new Date().getFullYear();
   }
 })();
 </script>
