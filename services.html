@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+```
+<title>Prestations | Permanent Beauty by Sam</title>
+
+<meta name="description"
+      content="Microblading, Ombre Brows, Powder Brows et Lip Blush à Casablanca. Résultats naturels, élégants et adaptés à votre visage.">
+
+<link rel="canonical" href="https://permanentbeautybysam.ma/services.html">
+
+<link rel="stylesheet" href="/styles.css?v=600">
+```
+
+</head>
+<body>
+
+<div id="site-header"></div>
+
+<main>
+
+```
+<section class="hero">
+
+    <div class="container">
+
+        <h1>Nos Prestations</h1>
+
+        <p class="hero-sub">
+            Découvrez nos prestations de maquillage permanent réalisées
+            avec précision, élégance et naturel.
+        </p>
+
+    </div>
+
+</section>
+
+<section class="why">
+
+    <div class="container">
+
+        <div class="why-grid">
+
+            <div class="why-card">
+
+                <img
+                    src="/assets/images/avant-apres/brows-05.webp"
+                    alt="Microblading Casablanca">
+
+                <h3>Microblading</h3>
+
+                <p>
+                    Technique poil à poil permettant de restructurer les sourcils
+                    avec un résultat naturel et harmonieux.
+                </p>
+
+                <p>
+                    Idéal pour les sourcils clairsemés, asymétriques ou peu définis.
+                </p>
+
+                <a href="/microblading-casablanca.html"
+                   class="btn btn-outline">
+                    En savoir plus
+                </a>
+
+            </div>
+
+            <div class="why-card">
+
+                <img
+                    src="/assets/images/avant-apres/brows-04.webp"
+                    alt="Ombre Brows Casablanca">
+
+                <h3>Ombre Brows / Powder Brows</h3>
+
+                <p>
+                    Effet poudré sophistiqué inspiré du maquillage professionnel.
+                </p>
+
+                <p>
+                    Un rendu doux, élégant, structuré et durable.
+                </p>
+
+                <a href="/ombre-brows-casablanca.html"
+                   class="btn btn-outline">
+                    En savoir plus
+                </a>
+
+            </div>
+
+            <div class="why-card">
+
+                <img
+                    src="/assets/images/avant-apres/lips-02.webp"
+                    alt="Lip Blush Casablanca">
+
+                <h3>Lip Blush (Glaçage des lèvres)</h3>
+
+                <p>
+                    Redonne couleur, fraîcheur et définition aux lèvres.
+                </p>
+
+                <p>
+                    Résultat naturel, lumineux et harmonieux au quotidien.
+                </p>
+
+                <a href="/lip-blush-casablanca.html"
+                   class="btn btn-outline">
+                    En savoir plus
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="cta-section">
+
+    <div class="container">
+
+        <h2>Besoin de conseils personnalisés ?</h2>
+
+        <p>
+            Contactez-nous directement sur WhatsApp pour discuter
+            de la prestation la plus adaptée à votre visage.
+        </p>
+
+        <a href="https://wa.me/212661245525?text=Bonjour%20Permanent%20Beauty%20by%20Sam%2C%20je%20souhaite%20des%20informations%20sur%20vos%20prestations."
+           class="btn btn-gold">
+            Réserver sur WhatsApp
+        </a>
+
+    </div>
+
+</section>
+```
+
+</main>
+
+<div id="site-footer"></div>
+
+<a class="wa-float"
+href="https://wa.me/212661245525"
+target="_blank"
+rel="noopener"
+aria-label="WhatsApp">
+
+```
+<img src="/assets/images/ui/whatsapp.png" alt="WhatsApp">
+<span>WhatsApp</span>
+```
+
+</a>
+
+<script>
+async function includeHTML(targetId, url){
+    const el = document.getElementById(targetId);
+    if(!el) return;
+
+    try{
+        const res = await fetch(url,{cache:"no-store"});
+        el.innerHTML = await res.text();
+    }catch(err){
+        console.error(err);
+    }
+}
+
+(async function(){
+    await includeHTML("site-header","/partials/header.html");
+})();
+
+(async function(){
+    await includeHTML("site-footer","/partials/footer.html");
+
+    const yearEl = document.getElementById("year");
+    if(yearEl){
+        yearEl.textContent = new Date().getFullYear();
+    }
+})();
+</script>
+
+</body>
+</html>

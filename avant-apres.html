@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <title>Avant / Après | Permanent Beauty by Sam</title>
+
+<meta name="description"
+     content="Découvrez les résultats Avant / Après réalisés par Permanent Beauty by Sam : Microblading, Ombre Brows, Powder Brows et Lip Blush à Casablanca.">
+
+  <link rel="stylesheet" href="/styles.css?v=600">
+</head>
+
+<body>
+
+<div id="site-header"></div>
+
+<section id="aaPage">
+
+  <div class="container">
+
+```
+<div class="hero" style="padding-bottom:30px;">
+  <h1>Avant / Après</h1>
+
+  <p class="hero-sub">
+    Découvrez quelques transformations réalisées chez
+    Permanent Beauty by Sam.
+  </p>
+</div>
+
+<div id="aaGrid" class="aaGrid"></div>
+```
+
+  </div>
+
+</section>
+
+<div id="site-footer"></div>
+
+<a class="wa-float"
+href="https://wa.me/212661245525"
+target="_blank"
+rel="noopener"
+aria-label="WhatsApp">
+
+  <img src="/assets/images/ui/whatsapp.png" alt="WhatsApp">
+  <span>WhatsApp</span>
+
+</a>
+
+<div id="aaViewer" aria-hidden="true">
+
+  <div class="inner">
+
+```
+<div class="top">
+  <div id="aaTitle" class="title"></div>
+
+  <button id="aaClose" class="btn">
+    ✕
+  </button>
+</div>
+
+<div class="stage">
+
+  <div id="aaBox" class="box"></div>
+
+  <div class="nav">
+    <button id="aaPrev">‹</button>
+    <button id="aaNext">›</button>
+  </div>
+
+</div>
+```
+
+  </div>
+
+</div>
+
+<script>
+async function includeHTML(targetId,url){
+  const el=document.getElementById(targetId);
+  if(!el) return;
+
+  try{
+    const res=await fetch(url,{cache:"no-store"});
+    el.innerHTML=await res.text();
+  }catch(err){
+    console.error(err);
+  }
+}
+
+(async function(){
+  await includeHTML("site-header","/partials/header.html");
+})();
+
+(async function(){
+  await includeHTML("site-footer","/partials/footer.html");
+
+  const yearEl=document.getElementById("year");
+  if(yearEl){
+    yearEl.textContent=new Date().getFullYear();
+  }
+})();
+</script>
+
+<script>
+
+const MEDIA = [
+
+"/assets/avant-apres/brows-01.mp4",
+"/assets/avant-apres/brows-02.mp4",
+"/assets/avant-apres/brows-03.mp4",
+
+"/assets/avant-apres/brows-04.webp",
+"/assets/avant-apres/brows-05.webp",
+"/assets/avant-apres/brows-06.webp",
+
+"/assets/avant-apres/lips-01.webp",
+"/assets/avant-apres/lips-02.webp",
+"/assets/avant-apres/lips-03.webp",
+
+"/assets/avant-apres/brows-01.webp",
+"/assets/avant-apres/brows-02.webp",
+"/assets/avant-apres/brows-03.webp"
+
+];
+
+const grid=document.getElementById("aaGrid");
+const viewer=document.getElementById("aaViewer");
+const box=document.getElementById("aaBox");
+const title=document.getElementById("aaTitle");
+
+let idx=0;
+
+function isVideo(src){
+  return src.toLowerCase().endsWith(".mp4");
+}
+
+function renderGrid(){
+
+  grid.innerHTML="";
+
+  MEDIA.forEach((src,i)=>{
+
+    const tile=document.createElement("div");
+    tile.className="aaTile";
+
+    if(isVideo(src)){
+
+      tile.innerHTML=`
+        <video muted playsinline preload="metadata">
+          <source src="${src}" type="video/mp4">
+        </video>
+      `;
+
+    }else{
+
+      tile.innerHTML=`
+        <img src="${src}" alt="Avant Après">
+      `;
+
+    }
+
+    tile.onclick=()=>openViewer(i);
+
+    grid.appendChild(tile);
+
+  });
+
+}
+
+function openViewer(i){
+  idx=i;
+  viewer.classList.add("open");
+  renderViewer();
+}
+
+function renderViewer(){
+
+  const src=MEDIA[idx];
+
+  title.textContent=(idx+1)+" / "+MEDIA.length;
+
+  box.innerHTML="";
+
+  if(isVideo(src)){
+
+    box.innerHTML=`
+      <video
+        controls
+        autoplay
+        loop
+        playsinline
+        controlsList="nodownload"
+      >
+        <source src="${src}" type="video/mp4">
+      </video>
+    `;
+
+  }else{
+
+    box.innerHTML=`
+      <img src="${src}" alt="">
+    `;
+
+  }
+
+}
+
+function prev(){
+  idx=(idx-1+MEDIA.length)%MEDIA.length;
+  renderViewer();
+}
+
+function next(){
+  idx=(idx+1)%MEDIA.length;
+  renderViewer();
+}
+
+document.getElementById("aaPrev").onclick=prev;
+document.getElementById("aaNext").onclick=next;
+
+document.getElementById("aaClose").onclick=()=>{
+  viewer.classList.remove("open");
+};
+
+document.addEventListener("contextmenu",(e)=>{
+  e.preventDefault();
+});
+
+renderGrid();
+
+</script>
+
+</body>
+</html>

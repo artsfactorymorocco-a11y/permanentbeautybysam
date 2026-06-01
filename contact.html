@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Contact | Permanent Beauty by Sam</title>
+
+<meta name="description"
+     content="Contactez Permanent Beauty by Sam à Casablanca. Réservation sur WhatsApp, localisation du studio et informations sur nos prestations de maquillage permanent.">
+
+  <link rel="canonical" href="https://permanentbeautybysam.ma/contact.html">
+
+  <link rel="stylesheet" href="/styles.css?v=600">
+</head>
+
+<body>
+
+<div id="site-header"></div>
+
+<main>
+
+<section class="hero">
+
+  <div class="container">
+
+```
+<h1>Contact & Réservation</h1>
+
+<p class="hero-sub">
+  Une question ? Besoin d'un conseil ?
+  Contactez-nous directement sur WhatsApp pour obtenir
+  des informations ou réserver votre rendez-vous.
+</p>
+```
+
+  </div>
+
+</section>
+
+<section class="section">
+
+  <div class="container">
+
+```
+<div class="contact-grid">
+
+  <div class="contact-card">
+
+    <h2>WhatsApp</h2>
+
+    <p>
+      Le moyen le plus rapide pour obtenir une réponse,
+      discuter de votre projet ou réserver un rendez-vous.
+    </p>
+
+    <br>
+
+    <a href="https://wa.me/212661245525?text=Bonjour%20Permanent%20Beauty%20by%20Sam%2C%20je%20souhaite%20obtenir%20des%20informations."
+       class="btn btn-gold">
+      Contacter sur WhatsApp
+    </a>
+
+  </div>
+
+  <div class="contact-card">
+
+    <h2>Instagram</h2>
+
+    <p>
+      Découvrez nos réalisations,
+      nouveautés et transformations avant/après.
+    </p>
+
+    <br>
+
+    <p>
+      <strong>@permanentbeautybysam</strong>
+    </p>
+
+  </div>
+
+</div>
+```
+
+  </div>
+
+</section>
+
+<section class="section">
+
+  <div class="container">
+
+```
+<div class="contact-card">
+
+  <h2>Notre Localisation</h2>
+
+  <p>
+    Casablanca, Maroc<br>
+    Sur rendez-vous uniquement.
+  </p>
+
+  <br>
+
+  <div class="map-wrapper">
+
+    <iframe
+      src="https://www.google.com/maps?q=Permanent%20Beauty%20by%20Sam%20Casablanca&output=embed"
+      loading="lazy"
+      allowfullscreen>
+    </iframe>
+
+  </div>
+
+</div>
+```
+
+  </div>
+
+</section>
+
+<section class="cta-section">
+
+  <div class="container">
+
+```
+<h2>Prête à révéler votre beauté naturelle ?</h2>
+
+<p>
+  Réservez votre rendez-vous dès aujourd'hui
+  et bénéficiez d'un accompagnement personnalisé.
+</p>
+
+<a href="https://wa.me/212661245525?text=Bonjour%20Permanent%20Beauty%20by%20Sam%2C%20je%20souhaite%20prendre%20un%20rendez-vous."
+   class="btn btn-gold">
+  Réserver sur WhatsApp
+</a>
+```
+
+  </div>
+
+</section>
+
+</main>
+
+<div id="site-footer"></div>
+
+<a class="wa-float"
+href="https://wa.me/212661245525"
+target="_blank"
+rel="noopener"
+aria-label="WhatsApp">
+
+  <img src="/assets/images/ui/whatsapp.png" alt="WhatsApp">
+  <span>WhatsApp</span>
+
+</a>
+
+<script>
+async function includeHTML(targetId, url){
+  const el = document.getElementById(targetId);
+  if(!el) return;
+
+  try{
+    const res = await fetch(url,{cache:"no-store"});
+    el.innerHTML = await res.text();
+  }catch(err){
+    console.error(err);
+  }
+}
+
+(async function(){
+  await includeHTML("site-header","/partials/header.html");
+})();
+
+(async function(){
+  await includeHTML("site-footer","/partials/footer.html");
+
+  const yearEl=document.getElementById("year");
+  if(yearEl){
+    yearEl.textContent=new Date().getFullYear();
+  }
+})();
+</script>
+
+</body>
+</html>

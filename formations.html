@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Formation Maquillage Permanent | Permanent Beauty by Sam</title>
+
+<meta name="description"
+     content="Formation diplômante en Maquillage Permanent à Casablanca. 35 heures de théorie et pratique : Microblading, Microshading, Ombré Brows, Glaçage et Correction des Lèvres.">
+
+  <link rel="canonical" href="https://permanentbeautybysam.ma/formations.html">
+
+  <link rel="stylesheet" href="/styles.css?v=600">
+</head>
+
+<body>
+
+<div id="site-header"></div>
+
+<main class="formations-wrap">
+
+  <section class="formations-hero">
+
+```
+<div class="formations-photo">
+  <img
+    src="/assets/images/training.jpg"
+    alt="Formation Maquillage Permanent Permanent Beauty by Sam">
+</div>
+
+<div class="formations-card">
+
+  <h1 class="formations-title">
+    Formation Maquillage Permanent (Diplômante)
+  </h1>
+
+  <p class="formations-sub">
+    Une formation complète de <strong>35 heures</strong>,
+    destinée aux débutantes comme aux professionnelles
+    souhaitant perfectionner leur technique et développer
+    leur activité dans le domaine du maquillage permanent.
+  </p>
+
+  <ul class="formations-bullets">
+    <li>35 heures de théorie et pratique</li>
+    <li>Du lundi au vendredi</li>
+    <li>10h00 à 17h00</li>
+    <li>Formation diplômante</li>
+    <li>Travail sur modèles vivants</li>
+  </ul>
+
+  <div class="formations-highlight">
+    <strong>Places limitées.</strong>
+    Nous privilégions les petits groupes afin d'assurer
+    un accompagnement personnalisé à chaque participante.
+  </div>
+
+  <div class="formations-cta">
+    <a class="btn btn-gold"
+       href="https://wa.me/212661245525?text=Bonjour%20je%20souhaite%20des%20informations%20sur%20la%20formation%20en%20maquillage%20permanent.">
+      Réserver ma place
+    </a>
+  </div>
+
+</div>
+
+
+  </section>
+
+  <section class="why">
+
+
+<div class="container">
+
+  <h2>Programme de la Formation</h2>
+
+  <div class="why-grid">
+
+    <div class="why-card">
+      <h3>Microblading</h3>
+      <p>
+        Création de sourcils poil à poil,
+        design et symétrie.
+      </p>
+    </div>
+
+    <div class="why-card">
+      <h3>Microshading</h3>
+      <p>
+        Ombrage doux et harmonieux
+        pour compléter le travail du sourcil.
+      </p>
+    </div>
+
+    <div class="why-card">
+      <h3>Ombré / Powder Brows</h3>
+      <p>
+        Technique poudrée professionnelle,
+        très demandée par la clientèle.
+      </p>
+    </div>
+
+    <div class="why-card">
+      <h3>Glaçage des Lèvres</h3>
+      <p>
+        Coloration naturelle et harmonisation
+        du contour des lèvres.
+      </p>
+    </div>
+
+    <div class="why-card">
+      <h3>Correction des Lèvres</h3>
+      <p>
+        Principes de correction et équilibrage
+        de la pigmentation.
+      </p>
+    </div>
+
+    <div class="why-card">
+      <h3>Hygiène & Sécurité</h3>
+      <p>
+        Protocoles professionnels,
+        stérilisation et bonnes pratiques.
+      </p>
+    </div>
+
+  </div>
+
+</div>
+
+
+  </section>
+
+  <section class="cta-section">
+
+
+<div class="container">
+
+  <h2>À qui s'adresse cette formation ?</h2>
+
+  <p>
+    Cette formation est idéale pour les personnes
+    souhaitant démarrer une carrière dans le maquillage
+    permanent ou perfectionner leurs compétences afin
+    d'offrir des prestations premium à leur clientèle.
+  </p>
+
+  <a href="https://wa.me/212661245525?text=Bonjour%20je%20souhaite%20m'inscrire%20à%20la%20formation."
+     class="btn btn-gold">
+    Je souhaite m'inscrire
+  </a>
+
+</div>
+
+
+  </section>
+
+</main>
+
+<div id="site-footer"></div>
+
+<a class="wa-float"
+href="https://wa.me/212661245525"
+target="_blank"
+rel="noopener"
+aria-label="WhatsApp">
+
+  <img src="/assets/images/ui/whatsapp.png" alt="WhatsApp">
+  <span>WhatsApp</span>
+
+</a>
+
+<script>
+async function includeHTML(targetId, url){
+  const el = document.getElementById(targetId);
+  if(!el) return;
+
+  try{
+    const res = await fetch(url,{cache:"no-store"});
+    el.innerHTML = await res.text();
+  }catch(err){
+    console.error(err);
+  }
+}
+
+(async function(){
+  await includeHTML("site-header","/partials/header.html");
+})();
+
+(async function(){
+  await includeHTML("site-footer","/partials/footer.html");
+
+  const yearEl=document.getElementById("year");
+  if(yearEl){
+    yearEl.textContent=new Date().getFullYear();
+  }
+})();
+</script>
+
+</body>
+</html>
